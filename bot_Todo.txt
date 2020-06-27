@@ -1,0 +1,80 @@
+add embeds to the bot (make a yt update vid about it)
+the games
+add mod tools
+automod
+ping
+make vids about updates (put embeds in own update)
+ DONE calculator
+allow for servers that change config for their own server like #char to autotranslate, autotranslate on off, target lang autotrans ;cofig, ;cofigchange 
+money convertor
+ways to save things for server (use txt with guild id as name), offical way
+rock paper scissors
+weather in city
+finish intro
+avatar stealer
+clear
+game = coinbox/tycoon like game for the mining 
+	another game = fight against bot
+guessing number game
+time
+Random num gen
+8ball
+
+
+
+Module install on my comp:
+py -3 -m pip install -U  modulename
+(if)
+pip install modulename
+(doesnt work)
+
+
+use bot instead of client
+b/c discord bot us a subclass fo client, anything you can do with client you can do w/ bot (ex you can do await message.channel.send(response))
+ger ready to get rid of old bot and replace w. custom code
+
+
+to do before update 1
+-bulkdelete (clear)
+-channelclear (clear whole channel)
+-mutechat (mutes channel) DONE
+-ping dONE!!!
+-cogs done???
+
+
+lapetus11 says:
+put badwords in diff file cus its long
+and put the events in on cog
+you can just use commands.Cog.listener() for everything
+
+
+-disable automod (buggy add for automod update)
+-for embeds in future update, add requested by ___
+-custom help in embed update
+-modlog in mod update
+
+store cogs in diff py
+
+villager bot used https://www.postgresql.org/ to store infividual prefixes (used asyncpg to connect to the database)
+stores other stuff like list of cursed images or the keys for the bot in json
+
+
+ctx.guild.default_role is @everyone
+
+
+SUMMITBOT VM CREDENTIALS
+cody
+Cody2008
+
+For Check Permissions, if you wnat to do if it has this perm OR it has this perm do this:
+https://github.com/Villager-Dev/Villager-Bot/blob/7b9e302cda2c1261631b265f0a85483a4e788c65/cogs/commands/admin.py#L120
+
+If instead you want to do if it has this perm AND it has this perm:
+@commands.has_permissions(administrator=True, manage_messages=True, manage_roles=True)
+
+
+to run code using console:
+windows: py bot.py
+linux: python3 bot.py
+
+
