@@ -1,5 +1,6 @@
 from discord.ext import commands
 from datetime import datetime as d
+import math
 
 class Essentials(commands.Cog):
     def __init__(self, bot):
@@ -22,8 +23,8 @@ class Essentials(commands.Cog):
         await ctx.send("```Translation Services Are Powered by Google Translate API```")
     #calc command
     @commands.command(name='calc', help = 'syntax: calc num1 operation num2 (valid operations: * / + - %) ')
-    async def calc(self, ctx, num1, operation, num2):
-        if(operation == "+"):
+    async def calc(self, ctx):
+        '''if(operation == "+"):
             num1=int(num1)
             num2=int(num2)
             answer = num1+num2
@@ -47,7 +48,23 @@ class Essentials(commands.Cog):
             answer = num1%num2
             await ctx.send('``` Calculated: '+str(num1)+"%"+str(num2)+"\n Result: "+str(answer)+"```")
         else:
-                await ctx.send("```Please enter a valid operation```")
+                await ctx.send("```Please enter a valid operation```")'''
+        try:
+            equation = str(ctx.message.clean_content.replace(f"{ctx.prefix}calc", ""))
+            if(equation==""):
+                await ctx.send("Uh oh! It appears you have not entered an equation")
+                
+            equation = equation.replace("÷", "/").replace("x", "*").replace("•", "*").replace("=", "==").replace("π",
+                                                                                                                   "3.14159")
+            invalidchar="^\\_@~`,<>?|'\"{}[]qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM"
+            for i in range(len(invalidchar)):
+                if(equation.find(invalidchar[i])!=-1):
+                    await ctx.send("Uh oh! You entered an invalid equation")
+            await ctx.send(eval(equation)) 
+
+
+        except Exception:
+            await ctx.send("Oops. Something went wrong")
 
 
 
