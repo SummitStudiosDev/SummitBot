@@ -10,7 +10,7 @@ translator = Translator()
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 
-cogs = ['cogs.Essentials', 'cogs.Moderation']
+cogs = ['cogs.Essentials', 'cogs.Moderation', 'cogs.Fun']
 print("Startup Command Recieved")
 prefix = input("Please Enter the Designated Command Prefix: " )
 status= input("Please Enter the Designated Bot Status: ")
@@ -58,14 +58,6 @@ async def members(ctx):
     members = '\n - '.join([member.name for member in server.members])
     await ctx.send(f'``` Members:\n - {members}```')
 
-#roll and flip
-@bot.command(name='rolldie', help ='rolls a die')
-async def rolldie(ctx):
-    await ctx.send("```Rolling Die: \n"+str(random.randint(1,6))+"```")
-@bot.command(name='coinflip', help ='flips a coin')
-async def coinflip(ctx):
-    sides = ['heads', 'tails']
-    await ctx.send("```Flipping Coin: \n"+str(random.choice(sides))+"```")
 
 
 #translate command
